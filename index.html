@@ -261,4 +261,25 @@
   });
 
   // Demo form handlers to prevent submit reload
-  document.getElementById('uploadForm').add
+  document.getElementById('uploadForm').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Upload feature coming soon! (This is a demo form)');
+  });
+
+  document.getElementById('reportForm').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Report feature coming soon! (This is a demo form)');
+  });
+
+  // Link from upload page to rules tab
+  document.querySelectorAll('.link-to-rules').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById('rules').classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
